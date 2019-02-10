@@ -34,7 +34,7 @@ After that, you can override default options letting you to fit any behavior.
 
  *Default behavior:*
 
-Redis flagger treats the element, in both *flag* and *flagged* endponts, as the same way. The main idea is to allways reach the same calculated redis key.
+Redis flagger treats the element between *flag*, *unflag* and *flagged* as the same way. The main idea is to allways reach the same calculated redis key.
 
 The calculating process, with default behavioral arguments, is the following...
 
