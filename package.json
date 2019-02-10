@@ -1,6 +1,6 @@
 {
   "name": "redis-flagger",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Redis Flagger",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/alejandrocena/redis-flagger#readme",
   "dependencies": {
-    "ioredis": "^4.6.2",
+    "redis": "^2.8.0",
     "sha1": "^1.1.1"
   }
 }

@@ -1,2 +1,3 @@
 # redis-flagger
-Redis Flagger
+
+A light weight library to perform content flagging. 
