@@ -1,6 +1,6 @@
 {
   "name": "redis-flagger",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Redis Flagger",
   "main": "index.js",
   "scripts": {
