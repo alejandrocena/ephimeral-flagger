@@ -84,7 +84,7 @@ flagger.flagged(element2).then(console.log); // false
  * Note that differences in object atribute order or array elements order, could lead in different hashing results. So if you cannot enshure that this object are *EXACTLY* the same, you can create an string element representation for example:
 
 *Considering..*
-original and another and the same but order.
+original and another are the same but order.
 ```js
 const original = {foo:'bar',bar:'foo'};
 const another = {bar:'foo',foo:'bar'};
