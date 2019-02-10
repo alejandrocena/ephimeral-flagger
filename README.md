@@ -1,2 +1,2 @@
-# redis-ephemeral-flagger
-Redis Ephemeral Flagger
+# redis-flagger
+Redis Flagger

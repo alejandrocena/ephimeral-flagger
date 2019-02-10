@@ -4,29 +4,33 @@ const sha1 = require('sha1');
 let redis;
 
 const DEFAULT = {
-  DB: 'ephemeral-flagger',
+  DB: 0,
+  PREFIX:'flagger::',
   TTL:60,
-  KEY_BUILDER: payload => sha1(JSON.parse(payload)),
+  KEY_BUILDER: payload => {
+    return DEFAULT.PREFIX + sha1(JSON.stringify(payload))
+  },
 };
 
-const setup = ({host,post,criteria=DEFAULT.KEY_BUILDER,db=DEFAULT.DB,ttl=DEFAULT.TTL,password}) => {
+const setup = ({host,port,db=DEFAULT.DB,password='',ttl=DEFAULT.TTL,key_builder=DEFAULT.KEY_BUILDER,key_prefix=DEFAULT.PREFIX}) => {
   DEFAULT.TTL = ttl;
-  DEFAULT.KEY_BUILDER = criteria;
+  DEFAULT.KEY_BUILDER = key_builder;
   redis = new Redis({host,port,db,password});
+  DEFAULT.PREFIX = key_prefix;
 };
 
-const create = (payload,{ttl=DEFAULT.TTL}) => {
+const flag = (payload,{ttl=DEFAULT.TTL}) => {
   if(!redis) throw 'Connection was not Stablished';
   redis.set(DEFAULT.KEY_BUILDER(payload), 1, 'EX', ttl);
 };
 
-const already = (payload) => {
+const flagged = async (payload) => {
   if(!redis) throw 'Connection was not Stablished';
-  return redis.exist(DEFAULT.KEY_BUILDER(payload));
+  return await redis.exists(DEFAULT.KEY_BUILDER(payload));
 };
 
-module.export = {
+module.exports = {
   setup,
-  create,
-  already,
+  flag,
+  flagged,
 };

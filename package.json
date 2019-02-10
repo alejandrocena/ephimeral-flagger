@@ -1,26 +1,25 @@
 {
-  "name": "redis-ephemeral-flagger",
-  "version": "0.0.1",
-  "description": "Redis Ephemeral Flagger",
+  "name": "redis-flagger",
+  "version": "1.0.0",
+  "description": "Redis Flagger",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alejandrocena/redis-ephemeral-flagger.git"
+    "url": "git+https://github.com/alejandrocena/redis-flagger.git"
   },
   "keywords": [
     "Redis",
-    "Ephemeral",
     "Flagger"
   ],
   "author": "Alejandro Cena",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alejandrocena/redis-ephemeral-flagger/issues"
+    "url": "https://github.com/alejandrocena/redis-flagger/issues"
   },
-  "homepage": "https://github.com/alejandrocena/redis-ephemeral-flagger#readme",
+  "homepage": "https://github.com/alejandrocena/redis-flagger#readme",
   "dependencies": {
     "ioredis": "^4.6.2",
     "sha1": "^1.1.1"
