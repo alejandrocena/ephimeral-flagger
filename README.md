@@ -113,4 +113,8 @@ const element2 = {foo:"bar",bar:"foo"};
 flagger.flag(element2,90);
 
 flagger.flagged(element2).then(console.log); // true
+
+flagger.unflag(element2);
+
+flagger.flagged(element2).then(console.log); // false
 ```
