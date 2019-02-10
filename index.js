@@ -13,7 +13,16 @@ const DEFAULT = {
   },
 };
 
-const setup = ({instance=null,host,port=DEFAULT.PORT,db=DEFAULT.DB,password='',ttl=DEFAULT.TTL,key_builder=DEFAULT.KEY_BUILDER,key_prefix=DEFAULT.PREFIX}) => {
+const setup = ({
+    instance=null,
+    host,
+    port=DEFAULT.PORT,
+    db=DEFAULT.DB,
+    password='',
+    ttl=DEFAULT.TTL,
+    key_builder=DEFAULT.KEY_BUILDER,
+    key_prefix=DEFAULT.PREFIX
+  }) => {
 
   if(instance) {
     redis = instance;
